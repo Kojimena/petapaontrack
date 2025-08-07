@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+
+/* fonts */
+
+/* Gotham Black 900 normal */
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/black.TTF') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Gotham Black 900 italic */
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/blackitalic.TTF') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Gotham Bold 700 normal */
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/bold.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Gotham Book 400 normal */
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Gotham Book 400 italic */
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/bookitalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Gotham Light 300 normal */
+/* (Si en realidad tu light es 300, cámbalo aquí; si es 400, déjalo como 400) */
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Gotham Medium 500 normal */
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Gotham Medium 500 italic */
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/GOTHAM-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Ahora define tu fuente por defecto */
+body {
+  font-family: 'Gotham', sans-serif;
+}
