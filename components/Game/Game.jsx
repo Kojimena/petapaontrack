@@ -4,7 +4,7 @@ const Game = ({ game}) => {
     const backendUrl = process.env.NEXT_PUBLIC_PB_URL;
   return (
     <li
-    className="p-4 rounded-xl relative shadow-sm h-24 md:h32 w-full md:min-w-[45%] md:flex-1 md:max-w-[50%] cursor-pointer"
+    className="p-4 rounded-xl relative shadow-sm h-24 md:h32 w-full md:min-w-[30%] md:flex-1 md:max-w-[33%] cursor-pointer"
     style={{
         background: `radial-gradient(circle, #${game.inner_color}, #${game.out_color})`,
     }}>
