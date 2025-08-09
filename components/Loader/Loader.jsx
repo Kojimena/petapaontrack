@@ -2,8 +2,8 @@ import React from 'react'
 
 const Loader = () => {
   return (
-    <div className='flex flex-col justify-center items-center h-full'>
-        <img src="/images/logos/logo_v1.png" alt="Petapa Ontrack Logo" className="w-40 h-auto animate-pulse" />
+    <div className='flex flex-col gap-4 justify-center items-center h-full'>
+        <img src="/images/logos/logo_v1.png" alt="Petapa Ontrack Logo" className="w-28 h-auto animate-pulse" />
         <h1 className="
                 text-6xl font-extrabold uppercase text-center animate-pulse
                 bg-clip-text text-transparent
