@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link';
 
 const Game = ({ game}) => {
     const backendUrl = process.env.NEXT_PUBLIC_PB_URL;
@@ -8,6 +9,14 @@ const Game = ({ game}) => {
     style={{
         background: `radial-gradient(circle, #${game.inner_color}, #${game.out_color})`,
     }}>
+        <Link
+        href={{
+          pathname: `/game/${game.id}`,
+          query: {
+            outer: game.out_color
+          }
+        }}
+      >
         <img
             src={`${backendUrl}/api/files/${game.collectionId}/${game.id}/${game.image}?token=`}
             alt={game.name}
@@ -19,6 +28,7 @@ const Game = ({ game}) => {
                 <span className="text-white"> <span className='text-2xl font-bold'>{game.time}</span> <span className='text-sm'>min</span></span>
             </div>
         </div>
+        </Link>
     </li>
   )
 }

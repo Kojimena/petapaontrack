@@ -1,8 +1,21 @@
+"use client"
 import React from 'react'
+import { useRouter } from "next/navigation"
+import { IoChevronBackCircle } from "react-icons/io5";
 
-const Header = () => {
+
+const Header = ({back}) => {
+
+    const router = useRouter()
   return (
-    <div className='flex items-center justify-center py-10'>
+    <div className='flex items-center justify-center py-10 relative w-full'>
+        {
+            back && (
+                <button className='absolute left-8 w-8' onClick={router.back}>
+                    <IoChevronBackCircle className='text-white text-3xl' />
+                </button>
+            )
+        }
         <img src="/images/logos/logo_v1.png" alt="Logo" className="h-12" />
     </div>
   )
