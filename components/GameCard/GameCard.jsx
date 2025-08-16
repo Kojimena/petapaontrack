@@ -74,9 +74,9 @@ const GameCard = ({id}) => {
                                 game.rules_height.map((rango, idx) => (
                                     <div key={idx} className="flex justify-between gap-4">
                                         <span className="text-black font-medium w-20">
-                                            {rango.min}m {rango.max == "999" ? "" : `- ${rango.max}m`}
+                                            {rango.min}m {rango.max == "999" ? "+" : `- ${rango.max}m`}
                                         </span>
-                                        <span className="text-[#858586] w-40">{rango.condicion}</span>
+                                        <span className="text-black w-40 font-light">{rango.condicion}</span>
                                 </div>
                             ))
                             ) : (

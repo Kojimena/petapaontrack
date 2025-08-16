@@ -89,3 +89,7 @@ body {
 .restrictions p{
   font-weight: 600;
 }
+
+.restrictions li {
+  font-weight: 100;
+}
