@@ -46,7 +46,7 @@ const GameCard = ({id}) => {
     }
 
   return (
-    <div className='px-8 md:px-40 lg:px-60 w-full flex flex-col justify-center items-center gap-4 min-h-full pb-20 '>
+    <div className='px-8 md:px-40 lg:px-60 w-full flex flex-col justify-center items-center gap-4 min-h-full pb-28 '>
         <h2 className='font-bold text-4xl text-center text-white'>
             {game.name}
         </h2>
