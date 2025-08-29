@@ -40,7 +40,7 @@ const GameList = () => {
 
     return (
         <div className='flex flex-col gap-20 pb-10'>
-                <Header />
+                <Header logo={"/images/logos/logo_v1.png"} />
                 <ul className="space-y-24 flex flex-col items-center w-full md:flex-row md:flex-wrap md:justify-between md:gap-10">
                     {games.map((game) => (
                         <Game game={game} key={game.id} />

@@ -13,8 +13,8 @@ const GamePage = () => {
 
 
   return (
-    <div className={`flex flex-col min-h-[100dvh] justify-start items-center`} style={{ backgroundColor: `#${outerColor}` }}>
-      <Header back />
+    <div className={`flex flex-col min-h-[100vh] justify-start items-center`} style={{ backgroundColor: `#${outerColor}` }}>
+      <Header back logo={"/images/logos/logo_v1.png"} color={`#${outerColor}`}/>
       <GameCard id={id}/>
       <Footer />
     </div>
