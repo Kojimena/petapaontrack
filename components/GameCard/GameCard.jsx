@@ -6,8 +6,11 @@ import { GoClock } from "react-icons/go";
 import { GiBodyHeight } from "react-icons/gi";
 import { PiShieldWarning } from "react-icons/pi";
 import Loader from "../Loader/Loader";
+import { useRouter } from 'next/navigation';
 
 const GameCard = ({id}) => {
+
+    const router = useRouter();
 
     const backendUrl = process.env.NEXT_PUBLIC_PB_URL;
     const pb = new PocketBase(backendUrl);
@@ -43,11 +46,11 @@ const GameCard = ({id}) => {
     }
 
   return (
-    <div className='px-8 md:px-40 lg:px-60 w-full flex flex-col gap-4 min-h-full pb-20 '>
+    <div className='px-8 md:px-40 lg:px-60 w-full flex flex-col justify-center items-center gap-4 min-h-full pb-20 '>
         <h2 className='font-bold text-4xl text-center text-white'>
             {game.name}
         </h2>
-        <div className='bg-white w-full p-4 rounded-4xl flex flex-col items-center gap-4'>
+        <div className='bg-white w-full md:max-w-2xl p-4 rounded-4xl flex flex-col items-center justify-center gap-4'>
             <img src={`${backendUrl}/api/files/${game.collectionId}/${game.id}/${game.image}?token=`}
                     alt={game.name} className='w-full h-40 object-contain rounded-2xl'
             />
@@ -95,7 +98,9 @@ const GameCard = ({id}) => {
                     <span className='px-4 restrictions text-sm text-black' dangerouslySetInnerHTML={{ __html: game.restrictions }}></span>
                 </div>
                 
-            <button className=' text-white mx-10 my-4 px-4 py-2 rounded-xl font-medium' style={{backgroundColor: `#${game.out_color}`}}>
+            <button className=' text-white mx-10 my-4 px-4 py-2 rounded-xl font-medium' style={{backgroundColor: `#${game.out_color}`}} onClick={() => {
+                router.push(`/map/${game.id}`);
+            }}>
                 Ver en mapa
             </button>
 

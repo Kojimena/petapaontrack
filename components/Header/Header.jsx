@@ -4,11 +4,11 @@ import { useRouter } from "next/navigation"
 import { IoChevronBackCircle } from "react-icons/io5";
 
 
-const Header = ({back}) => {
+const Header = ({back, logo, color}) => {
 
     const router = useRouter()
   return (
-    <div className='flex items-center justify-center py-10 relative w-full'>
+    <div className={`flex items-center justify-center py-10 relative w-full`} style={{backgroundColor: color || '#ffff'}}>
         {
             back && (
                 <button className='absolute left-8 w-8' onClick={router.back}>
@@ -16,7 +16,7 @@ const Header = ({back}) => {
                 </button>
             )
         }
-        <img src="/images/logos/logo_v1.png" alt="Logo" className="h-12" />
+        <img src={logo} alt="Logo" className="h-12" />
     </div>
   )
 }
