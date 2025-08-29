@@ -48,13 +48,13 @@ const GameList = () => {
     }
 
     return (
-        <div className='flex flex-col gap-20 py-4'>
+        <div className='flex flex-col gap-20 pt-4 pb-20'>
             <div className='flex gap-4 flex-col justify-center items-end'>
                 <label className="input bg-white rounded-full flex items-center gap-2 px-4 py-2 w-full max-w-md border border-gray-300 active:outline-none ">
                     <HiOutlineSearch className='text-2xl text-black' />
                     <input type="search" required placeholder="Buscar atracción" className='flex-1 outline-none text-gray-800' value={searchTerm} onChange={handleSearch}/>
                 </label>
-                <button className='bg-[#2C3480] text-white w-40 px-4 py-2 rounded-full  flex items-center gap-2 justify-center'>
+                <button className='bg-[#2C3480] text-white w-36 px-4 py-2 rounded-full  flex items-center gap-2 justify-center'>
                     <LiaSlidersHSolid className='text-xl' />
                     Filtros
                 </button>
