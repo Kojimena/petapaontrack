@@ -1,13 +1,14 @@
-import Image from "next/image";
-import Loader from "@/components/Loader/Loader";
 import GameList from "@/components/GameList/GameList";
 import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
-    <section className="h-[100dvh]">
-      <div className="px-10 h-full">
+    <section className="bg-white min-h-[100dvh] relative">
+      <div className="px-10 ">
+        <Header logo={"/images/logos/logo_v1.png"} />
         <GameList />
+        <Footer />
       </div>      
     </section>
   );

@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 
 export const metadata = {
   title: "Petapa Ontrack",
-  description: "CHATUI",  
+  description: "Petapa Ontrack - Irtra Petapa",  
   image: "/assets/images/logos/logo_v1.png",
 };
 
