@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'next/link';
+import { GoClock } from "react-icons/go";
+
 
 const Game = ({ game}) => {
     const backendUrl = process.env.NEXT_PUBLIC_PB_URL;
@@ -24,7 +26,8 @@ const Game = ({ game}) => {
         />
         <div className="flex justify-between absolute bottom-4 left-4 right-4">
             <h2 className="text-2xl font-bold text-white w-46 leading-[1]">{game.name}</h2>
-            <div className='flex items-end gap-2'>
+            <div className='flex items-center justify-center gap-2'>
+                <GoClock className='text-white text-2xl' />
                 <span className="text-white"> <span className='text-2xl font-bold'>{game.time}</span> <span className='text-sm'>min</span></span>
             </div>
         </div>

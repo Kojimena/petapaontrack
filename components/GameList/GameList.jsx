@@ -6,6 +6,7 @@ import Game from '../Game/Game';
 import Loader from '../Loader/Loader';
 import Header from '../Header/Header';
 
+
 const GameList = () => {
     const [games, setGames] = useState([]);
     const [loading, setLoading] = useState(true);
