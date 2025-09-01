@@ -54,7 +54,7 @@ const GameCard = ({id}) => {
             <img src={`${backendUrl}/api/files/${game.collectionId}/${game.id}/${game.image}?token=`}
                     alt={game.name} className='w-full h-40 object-contain rounded-2xl'
             />
-            <span className='px-4 text-justify font-light' dangerouslySetInnerHTML={{ __html: game.description }}></span>
+            <span className='px-4 text-justify font-light text-black' dangerouslySetInnerHTML={{ __html: game.description }}></span>
                 <div className='flex flex-col px-4 '>
                 <div className='w-full h-[1px] bg-[#858586]'></div>
                 <div className='flex gap-4 justify-between py-4 items-center'>
@@ -62,7 +62,7 @@ const GameCard = ({id}) => {
                         <GoClock className='text-[#858586] text-2xl' />
                         <span className='font-medium text-[#858586]'>Espera aproximada</span>
                     </div>
-                    <span className='font-medium text-black'>80 min</span>
+                    <span className='font-medium text-black'>{game.time < 1 ? "<1" : game.time} min</span>
                 </div>
 
                 <div className='w-full h-[1px] bg-[#858586]'></div>

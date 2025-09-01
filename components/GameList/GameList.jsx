@@ -26,7 +26,7 @@ const GameList = () => {
         const fetchData = async () => {
             try {
                 const records = await pb.collection('games').getFullList({
-                    sort: '-created',
+                    sort: 'time',
                 });
                 console.log(records)
                 setGames(records);

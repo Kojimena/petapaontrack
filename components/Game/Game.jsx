@@ -28,7 +28,8 @@ const Game = ({ game}) => {
             <h2 className="text-2xl font-bold text-white w-46 leading-[1]">{game.name}</h2>
             <div className='flex items-center justify-center gap-2'>
                 <GoClock className='text-white text-2xl' />
-                <span className="text-white"> <span className='text-2xl font-bold'>{game.time}</span> <span className='text-sm'>min</span></span>
+                <span className="text-white"> <span className='text-2xl font-bold'>{game.time < 1 ? "<1" : game.time}
+                </span> <span className='text-sm'>min</span></span>
             </div>
         </div>
         </Link>
