@@ -22,7 +22,7 @@ const RootLayout = ({ children }) => {
         <meta name="keywords" content="" />
       </head>
       <body>
-        <main className="app min-h-screen relative">{children}</main>
+        <main className="app relative">{children}</main>
       </body>
     </html>
   );
