@@ -92,18 +92,24 @@ const Game = ({ game }) => {
     }
   };
 
+  const isClosed = game.closed === true;
+
   return (
     <MotionConfig reducedMotion="user">
       <motion.li
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.4 }}
-        whileHover="hover"
-        whileTap="tap"
+        whileHover={!isClosed ? "hover" : ""} // sin hover si está cerrado
+        whileTap={!isClosed ? "tap" : ""}
         variants={cardVariants}
-        className="p-4 rounded-xl relative shadow-sm h-24 md:h32 w-full md:min-w-[30%] md:flex-1 md:max-w-[33%] cursor-pointer"
+        className={`p-4 rounded-xl relative shadow-sm h-24 md:h32 w-full md:min-w-[30%] md:flex-1 md:max-w-[33%] ${
+          isClosed ? "cursor-not-allowed grayscale" : "cursor-pointer"
+        }`}
         style={{
-          background: `radial-gradient(circle, #${game.inner_color}, #${game.out_color})`,
+          background: isClosed
+            ? "radial-gradient(circle, #9ca3af, #6b7280)" // gris
+            : `radial-gradient(circle, #${game.inner_color}, #${game.out_color})`,
           willChange: "transform, box-shadow"
         }}
       >
@@ -112,6 +118,7 @@ const Game = ({ game }) => {
             pathname: `/game/${game.id}`,
             query: { outer: game.out_color }
           }}
+          className={isClosed ? "pointer-events-none" : ""}
         >
           <motion.img
             src={`${backendUrl}/api/files/${game.collectionId}/${game.id}/${game.image}?token=`}
@@ -126,39 +133,26 @@ const Game = ({ game }) => {
               custom={0}
               variants={contentVariants}
             >
-              {game.name}
+              {game.name}{" "}
+              {isClosed && (
+                <span className="block text-sm font-medium text-red-300">
+                  CERRADO
+                </span>
+              )}
             </motion.h2>
 
-            <motion.div
-              className="flex items-center justify-center gap-2"
-              custom={1}
-              variants={contentVariants}
-              aria-label={`Tiempo estimado: ${game.time} minutos`}
-            >
-              <GoClock className="text-white text-2xl" />
-              {handleGameTime(game.time)}
-            </motion.div>
+            {!isClosed && (
+              <motion.div
+                className="flex items-center justify-center gap-2"
+                custom={1}
+                variants={contentVariants}
+                aria-label={`Tiempo estimado: ${game.time} minutos`}
+              >
+                <GoClock className="text-white text-2xl" />
+                {handleGameTime(game.time)}
+              </motion.div>
+            )}
           </div>
-
-          {/* Brillo suave al pasar el mouse */}
-          <motion.span
-            aria-hidden
-            className="absolute inset-0 rounded-xl"
-            style={{
-              background:
-                "radial-gradient(120px 60px at var(--mx,50%) -20%, rgba(255,255,255,0.25), rgba(255,255,255,0) 70%)"
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.6 }}
-            whileHover={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
-            onMouseMove={(e) => {
-              const target = e.currentTarget;
-              const rect = target.getBoundingClientRect();
-              const mx = ((e.clientX - rect.left) / rect.width) * 100;
-              target.style.setProperty("--mx", `${mx}%`);
-            }}
-          />
         </Link>
       </motion.li>
     </MotionConfig>
