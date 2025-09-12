@@ -44,10 +44,10 @@ const Game = ({ game }) => {
       newtime = time;
       unit = "min";
       return (
-        <span className="text-white">
-          <span className="text-2xl font-bold">{newtime}</span>
+        <div className="text-white">
+          <span className="text-2xl font-bold">{Math.round(newtime)}</span>
           <span className="text-sm">{unit}</span>
-        </span>
+        </div>
       );
     }
   };
@@ -143,7 +143,7 @@ const Game = ({ game }) => {
 
             {!isClosed && (
               <motion.div
-                className="flex items-center justify-center gap-2"
+                className="flex items-center justify-end gap-2 w-full"
                 custom={1}
                 variants={contentVariants}
                 aria-label={`Tiempo estimado: ${game.time} minutos`}

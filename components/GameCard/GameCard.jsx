@@ -37,6 +37,54 @@ const GameCard = ({id}) => {
     if (id) fetchGame();
   }, [id]);
 
+
+    const handleGameTime = (time) => {
+    let newtime = "";
+    let unit = "";
+    if (time < 1) {
+      newtime = "< 1";
+      unit = "min";
+      return (
+        <span className="text-black">
+          <span className="text-2xl font-bold">{newtime}</span>
+          <span className="text-sm">{unit}</span>
+        </span>
+      );
+    } else if (time > 60) {
+      let hour = time / 60;
+      let min = (hour - Math.floor(hour)) * 60;
+      newtime = Math.floor(hour);
+      unit = "h";
+      if (min > 0) {
+        return (
+          <span className="text-black">
+            <span className="text-xl ">{newtime}</span>
+            <span className="text-sm">{unit} </span>
+            <span className="text-xl ">{Math.floor(min)}</span>
+            <span className="text-sm">min</span>
+          </span>
+        );
+      } else {
+        return (
+          <span className="text-black">
+            <span className="text-xl">{newtime}</span>
+            <span className="text-sm">{unit}</span>
+          </span>
+        );
+      }
+    } else {
+      newtime = time;
+      unit = "min";
+      return (
+        <div className="text-black">
+          <span className="text-xl ">{Math.round(newtime)}</span>
+          <span className="text-sm">{unit}</span>
+        </div>
+      );
+    }
+  };
+
+
    if (loading) {
         return (
             <div className='flex items-center justify-center min-h-full'>
@@ -62,7 +110,7 @@ const GameCard = ({id}) => {
                         <GoClock className='text-[#858586] text-2xl' />
                         <span className='font-medium text-[#858586]'>Espera aproximada</span>
                     </div>
-                    <span className='font-medium text-black'>{game.time < 1 ? "<1" : game.time} min</span>
+                    <span className='font-medium text-black'>{handleGameTime(game.time)}</span>
                 </div>
 
                 <div className='w-full h-[1px] bg-[#858586]'></div>
