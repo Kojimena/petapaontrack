@@ -6,9 +6,7 @@ export default function Home() {
   return (
     <section className="bg-white min-h-[100vh] relative">
       <div className="px-10 ">
-        <Header logo={"/images/logos/logo_v1.png"} />
         <WalkThrough />
-        <Footer />
       </div>      
     </section>
   );
