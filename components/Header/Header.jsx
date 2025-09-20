@@ -12,7 +12,7 @@ const Header = ({back, logo, color}) => {
         {
             back && (
                 <button className='absolute left-8 w-8' onClick={router.back}>
-                    <IoChevronBackCircle className='text-white text-3xl' />
+                    <IoChevronBackCircle className={`${color ? 'text-white' : 'text-[#2C3480]'} text-3xl`} />
                 </button>
             )
         }
