@@ -103,7 +103,7 @@ const Game = ({ game }) => {
         whileHover={!isClosed ? "hover" : ""} // sin hover si está cerrado
         whileTap={!isClosed ? "tap" : ""}
         variants={cardVariants}
-        className={`p-4 rounded-xl relative shadow-sm h-24 md:h32 w-full md:min-w-[30%] md:flex-1 md:max-w-[33%] ${
+        className={`p-4 rounded-xl relative shadow-sm h-24 md:h32 w-full lg:max-w-[45%] xl:max-w-[30%]
           isClosed ? "cursor-not-allowed grayscale" : "cursor-pointer"
         }`}
         style={{

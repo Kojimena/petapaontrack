@@ -5,7 +5,7 @@ import PocketBase from "pocketbase";
 import Loader from "../Loader/Loader";
 import PinComponent from "../PinComponent/PinComponent";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-
+import Image from "next/image";
 
 const Map = ({id}) => {
 

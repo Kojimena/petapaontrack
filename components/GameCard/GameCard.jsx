@@ -46,7 +46,7 @@ const GameCard = ({id}) => {
       unit = "min";
       return (
         <span className="text-black">
-          <span className="text-2xl font-bold">{newtime}</span>
+          <span className="text-xl font-bold">{newtime}</span>
           <span className="text-sm">{unit}</span>
         </span>
       );
@@ -94,21 +94,27 @@ const GameCard = ({id}) => {
     }
 
   return (
-    <div className='px-8 md:px-40 lg:px-60 w-full flex flex-col justify-center items-center gap-4 min-h-full pb-28 '>
+    <div 
+      className='px-8 md:px-40 lg:px-60 w-full flex flex-col justify-center items-center gap-4 min-h-full pb-28 '
+      >
         <h2 className='font-bold text-4xl text-center text-white'>
             {game.name}
         </h2>
-        <div className='bg-white w-full md:max-w-2xl p-4 rounded-4xl flex flex-col items-center justify-center gap-4'>
+        <div className='bg-white w-full md:max-w-2xl p-4 rounded-4xl flex flex-col items-center justify-center gap-4'
+          data-theme="light"
+        >
             <img src={`${backendUrl}/api/files/${game.collectionId}/${game.id}/${game.image}?token=`}
                     alt={game.name} className='w-full h-40 object-contain rounded-2xl'
             />
-            <span className='px-4 text-justify font-light text-black' dangerouslySetInnerHTML={{ __html: game.description }}></span>
+            <span className='px-4 text-justify font-light text-black' 
+              style={{ colorScheme: "light" }}
+            dangerouslySetInnerHTML={{ __html: game.description }}></span>
                 <div className='flex flex-col px-4 '>
                 <div className='w-full h-[1px] bg-[#858586]'></div>
                 <div className='flex gap-4 justify-between py-4 items-center'>
                     <div className='flex gap-2 items-center'>
                         <GoClock className='text-[#858586] text-2xl' />
-                        <span className='font-medium text-[#858586]'>Espera aproximada</span>
+                        <span className='font-medium text-[#858586] text-sm'>Espera aproximada</span>
                     </div>
                     <span className='font-medium text-black'>{handleGameTime(game.time)}</span>
                 </div>
