@@ -73,7 +73,7 @@ const GameList = () => {
   }
 
   return (
-    <div className="flex flex-col gap-20 pt-4 pb-20 md:px-20">
+    <div className="flex flex-col gap-28 pt-4 pb-28 md:px-20">
       <div
         data-theme="light"
         className="flex gap-4 flex-col justify-center items-end md:items-center w-full"
@@ -104,21 +104,20 @@ const GameList = () => {
         </div>
 
         {openFilters && (
-          <div className="flex flex-wrap gap-4 mt-2">
+          <div className="flex flex-wrap gap-2 mt-2">
             {allTags.map((t) => {
               const active = activeTags.includes(t);
               return (
                 <button
                   key={t}
                   onClick={() => toggleTag(t)}
-                  className={`px-2 flex-1 py-1 rounded-full border text-sm max-w-1/3 flex justify-center items-center ${
+                  className={`relative px-2 flex-1 py-1 rounded-full border text-sm w-1/4 max-w-1/3 flex justify-center items-center ${
                     active
                       ? "!bg-[#2c3480d3] !text-white !border-[#2C3480]"
                       : "!bg-white !text-gray-800 !border-gray-300"
                   }`}
                 >
                   {t}
-                  {active && <IoCloseCircle className="ml-2" />}
                 </button>
               );
             })}

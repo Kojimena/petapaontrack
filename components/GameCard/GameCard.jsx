@@ -111,14 +111,23 @@ const GameCard = ({id}) => {
             dangerouslySetInnerHTML={{ __html: game.description }}></span>
                 <div className='flex flex-col px-4 '>
                 <div className='w-full h-[1px] bg-[#858586]'></div>
-                <div className='flex gap-4 justify-between py-4 items-center'>
+                {
+                  !game.closed ? (
+                    <div className='flex gap-4 justify-between py-4 items-center'>
                     <div className='flex gap-2 items-center'>
                         <GoClock className='text-[#858586] text-2xl' />
                         <span className='font-medium text-[#858586] text-sm'>Espera aproximada</span>
                     </div>
                     <span className='font-medium text-black'>{handleGameTime(game.time)}</span>
                 </div>
-
+                  ) : (
+                    <div className='flex gap-4 justify-between py-4 items-center w-full'>
+                      <div className='flex gap-2 items-center w-full justify-center'>
+                          <span className='font-medium text-red-400 text-sm text-center'>Atracción cerrada temporalmente</span>
+                      </div>
+                  </div>
+                  )
+                }
                 <div className='w-full h-[1px] bg-[#858586]'></div>
                 <div className='flex flex-col gap-4 justify-between py-4 items-start'>
                     <div className='flex gap-2 items-center'>

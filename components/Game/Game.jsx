@@ -100,12 +100,9 @@ const Game = ({ game }) => {
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.4 }}
-        whileHover={!isClosed ? "hover" : ""} // sin hover si está cerrado
-        whileTap={!isClosed ? "tap" : ""}
         variants={cardVariants}
         className={`p-4 rounded-xl relative shadow-sm h-24 md:h32 w-full lg:max-w-[45%] xl:max-w-[30%]
-          isClosed ? "cursor-not-allowed grayscale" : "cursor-pointer"
-        }`}
+          ${isClosed ? "grayscale" : ""} transition-all duration-200`}
         style={{
           background: isClosed
             ? "radial-gradient(circle, #9ca3af, #6b7280)" // gris
@@ -118,7 +115,6 @@ const Game = ({ game }) => {
             pathname: `/game/${game.id}`,
             query: { outer: game.out_color }
           }}
-          className={isClosed ? "pointer-events-none" : ""}
         >
           <motion.img
             src={`${backendUrl}/api/files/${game.collectionId}/${game.id}/${game.image}?token=`}
