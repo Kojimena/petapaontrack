@@ -131,9 +131,23 @@ const GameList = () => {
       </div>
 
       <ul className="space-y-24 flex flex-col items-center w-full md:flex-row md:flex-wrap md:justify-between md:gap-10">
-        {filteredGames.map((game) => (
-          <Game key={game.id} game={game} />
-        ))}
+        {
+          filteredGames.length === 0 ? (
+            <div className="flex flex-col gap-4">
+              <img
+                src="/images/noresults.png"
+                alt="No results"
+                className="w-40 mx-auto"
+              />
+              <p className="text-center text-gray-500 font-semibold">
+                Lo sentimos, no se encontraron atracciones que coincidan con tu búsqueda.
+              </p>
+            </div>
+            
+          ) : filteredGames.map((game) => (
+            <Game key={game.id} game={game} />
+          ))
+        }
       </ul>
     </div>
   );
