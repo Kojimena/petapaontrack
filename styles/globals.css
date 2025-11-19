@@ -87,8 +87,12 @@ body {
   padding-left: 1.5rem; /* Espacio para el marcador de lista */
 }
 
+.restrictions strong {
+  font-weight: 700;
+}
+
 .restrictions p{
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .restrictions li {

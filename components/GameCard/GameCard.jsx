@@ -158,7 +158,7 @@ const GameCard = ({id}) => {
                         <PiShieldWarning className='text-[#858586] text-2xl' />
                         <span className='font-medium text-[#858586]'>Restricciones</span>
                     </div>
-                    <span className='px-4 restrictions text-sm text-black' dangerouslySetInnerHTML={{ __html: game.restrictions }}></span>
+                    <span className='px-4 restrictions text-sm ' dangerouslySetInnerHTML={{ __html: game.restrictions }}></span>
                 </div>
                 
             <button className=' text-white mx-10 my-4 px-4 py-2 rounded-xl font-medium' style={{backgroundColor: `#${game.out_color}`}} onClick={() => {
